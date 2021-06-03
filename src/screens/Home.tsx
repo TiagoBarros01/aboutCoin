@@ -1,12 +1,16 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+import {
+  ScrollView, StatusBar,
+} from 'react-native';
 
+import { QueryButton } from '../components/QueryButton';
 import {
   QuotaContainer,
   Wrapper,
   CurrentQuotaText,
   QuotaText,
   HistoricGraphic,
+  FilterContainer,
 } from '../styles/screens/Home';
 
 export default function Home() {
@@ -18,6 +22,24 @@ export default function Home() {
         <QuotaText>Last quotation </QuotaText>
       </QuotaContainer>
       <HistoricGraphic />
+      <FilterContainer>
+        <QueryButton>
+          7D
+        </QueryButton>
+        <QueryButton>
+          15D
+        </QueryButton>
+        <QueryButton>
+          1M
+        </QueryButton>
+        <QueryButton>
+          3M
+        </QueryButton>
+        <QueryButton>
+          6M
+        </QueryButton>
+      </FilterContainer>
+      {/* <ScrollView /> */}
     </Wrapper>
   );
 }

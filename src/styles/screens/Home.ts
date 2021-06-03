@@ -38,3 +38,12 @@ export const HistoricGraphic = styled.View`
 
   margin-top: 20px;
 `;
+
+export const FilterContainer = styled.View`
+  width: 95%;
+
+  flex-direction: row;
+  justify-content: space-around;
+
+  padding-top: 10px;
+`;
