@@ -29,14 +29,15 @@ export default function Home() {
         <CurrentQuotaText>$ 54423.355</CurrentQuotaText>
         <QuotaText>Last quotation </QuotaText>
       </QuotaContainer>
-      <HistoricGraphic />
-      <FilterContainer>
-        <QueryButton text="7D" />
-        <QueryButton text="15D" />
-        <QueryButton text="1M" />
-        <QueryButton text="3M" />
-        <QueryButton text="6M" />
-      </FilterContainer>
+      <HistoricGraphic>
+        <FilterContainer>
+          <QueryButton text="7D" />
+          <QueryButton text="15D" />
+          <QueryButton text="1M" />
+          <QueryButton text="3M" />
+          <QueryButton text="6M" />
+        </FilterContainer>
+      </HistoricGraphic>
       <QuotationWrapper>
         <CardLeft>
           <CardLeftContent>

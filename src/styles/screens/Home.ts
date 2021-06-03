@@ -32,6 +32,9 @@ export const HistoricGraphic = styled.View`
   width: 90%;
   height: 220px;
 
+  align-items: center;
+  justify-content: flex-end;
+
   background: ${(props) => props.theme.colors.scndBackground};
 
   border-radius: 15px;
@@ -45,6 +48,8 @@ export const FilterContainer = styled.View`
   flex-direction: row;
   justify-content: space-around;
 
+  margin-bottom: 15px;
+
   padding-top: 10px;
 `;
 
@@ -52,8 +57,6 @@ export const QuotationWrapper = styled.View`
   background: ${(props) => props.theme.colors.background};
   
   width: 90%;
-
-  margin-top: 20px;
 
   border-radius: 15px;
 
