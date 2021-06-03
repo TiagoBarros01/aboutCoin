@@ -2,23 +2,23 @@ import 'styled-components/native';
 
 declare module 'styled-components/native' {
   export interface DefaultTheme {
-      title: String,
+      title: string,
 
       colors: {
-        background: String;
+        background: string;
 
-        title: String;
-        text: String;
+        title: string;
+        text: string;
 
-        green: String;
+        green: string;
 
-        black: String;
-        white: String;
-        gray: String;
+        black: string;
+        white: string;
+        gray: string;
 
-        blue: String;
+        blue: string;
 
-        red: String;
+        red: string;
     };
 
   }

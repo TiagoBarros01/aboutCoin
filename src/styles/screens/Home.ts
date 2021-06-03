@@ -5,7 +5,7 @@ export const Wrapper = styled.SafeAreaView`
   flex: 1;
   align-items: center;
 
-  background: #222;
+  background-Color: ${(props) => props.theme.colors.background};
   padding-top: ${Platform.OS === 'android' ? '40px' : 0};
 `;
 
