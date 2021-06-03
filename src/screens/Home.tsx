@@ -6,6 +6,7 @@ import {
   Wrapper,
   CurrentQuotaText,
   QuotaText,
+  HistoricGraphic,
 } from '../styles/screens/Home';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <CurrentQuotaText>💲 54423.355</CurrentQuotaText>
         <QuotaText>Last quotation </QuotaText>
       </QuotaContainer>
+      <HistoricGraphic />
     </Wrapper>
   );
 }

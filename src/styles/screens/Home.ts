@@ -5,7 +5,7 @@ export const Wrapper = styled.SafeAreaView`
   flex: 1;
   align-items: center;
 
-  background-Color: ${(props) => props.theme.colors.background};
+  background: ${(props) => props.theme.colors.background};
   padding-top: ${Platform.OS === 'android' ? '40px' : 0};
 `;
 
@@ -26,4 +26,15 @@ export const CurrentQuotaText = styled.Text`
 export const QuotaText = styled.Text`
   font-size: 18px;
   color: #eee;
+`;
+
+export const HistoricGraphic = styled.View`
+  width: 90%;
+  height: 220px;
+
+  background: ${(props) => props.theme.colors.scndBackground};
+
+  border-radius: 15px;
+
+  margin-top: 20px;
 `;
