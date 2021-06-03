@@ -4,15 +4,16 @@ import { View } from 'react-native';
 import { QueryText, BtnContainer } from './styles';
 
 interface Props {
-  children: React.ReactNode
+  text: string;
 }
 
-export function QueryButton({ children }: Props) {
+export function QueryButton ({ text }: Props) {
   return (
     <View>
       <BtnContainer>
-        <QueryText>{children}</QueryText>
+        <QueryText>{text}</QueryText>
       </BtnContainer>
     </View>
+
   );
 }

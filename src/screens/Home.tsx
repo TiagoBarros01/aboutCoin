@@ -23,21 +23,11 @@ export default function Home() {
       </QuotaContainer>
       <HistoricGraphic />
       <FilterContainer>
-        <QueryButton>
-          7D
-        </QueryButton>
-        <QueryButton>
-          15D
-        </QueryButton>
-        <QueryButton>
-          1M
-        </QueryButton>
-        <QueryButton>
-          3M
-        </QueryButton>
-        <QueryButton>
-          6M
-        </QueryButton>
+        <QueryButton text="7D" />
+        <QueryButton text="15D" />
+        <QueryButton text="1M" />
+        <QueryButton text="3M" />
+        <QueryButton text="6M" />
       </FilterContainer>
       {/* <ScrollView /> */}
     </Wrapper>
