@@ -6,6 +6,7 @@ declare module 'styled-components/native' {
 
       colors: {
         background: string;
+        scndBackground: string,
 
         title: string;
         text: string;

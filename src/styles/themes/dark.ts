@@ -3,6 +3,7 @@ export default {
 
   colors: {
     background: '#222',
+    scndBackground: '#333',
 
     title: '#eee',
     text: '#ddd',
