@@ -10,7 +10,7 @@ interface Props {
 export function QueryButton ({ text }: Props) {
   return (
     <View>
-      <BtnContainer>
+      <BtnContainer activeOpacity={0.6}>
         <QueryText>{text}</QueryText>
       </BtnContainer>
     </View>

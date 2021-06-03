@@ -1,6 +1,7 @@
+/* eslint-disable global-require */
 import React from 'react';
 import {
-  ScrollView, StatusBar,
+  StatusBar, Text, View,
 } from 'react-native';
 
 import { QueryButton } from '../components/QueryButton';
@@ -11,6 +12,13 @@ import {
   QuotaText,
   HistoricGraphic,
   FilterContainer,
+  QuotationWrapper,
+  CardLeft,
+  CardRight,
+  BitCoinImage,
+  CardLeftContent,
+  CurrentDayQuotation,
+  PriceText,
 } from '../styles/screens/Home';
 
 export default function Home() {
@@ -18,7 +26,7 @@ export default function Home() {
     <Wrapper>
       <StatusBar backgroundColor="#f50d41" barStyle="light-content" />
       <QuotaContainer>
-        <CurrentQuotaText>💲 54423.355</CurrentQuotaText>
+        <CurrentQuotaText>$ 54423.355</CurrentQuotaText>
         <QuotaText>Last quotation </QuotaText>
       </QuotaContainer>
       <HistoricGraphic />
@@ -29,6 +37,19 @@ export default function Home() {
         <QueryButton text="3M" />
         <QueryButton text="6M" />
       </FilterContainer>
+      <QuotationWrapper>
+        <CardLeft>
+          <CardLeftContent>
+            <BitCoinImage
+              source={require('../img/coinLogo.jpg')}
+            />
+            <CurrentDayQuotation>07/05/2021</CurrentDayQuotation>
+          </CardLeftContent>
+        </CardLeft>
+        <CardRight>
+          <PriceText>$ 53331.355</PriceText>
+        </CardRight>
+      </QuotationWrapper>
       {/* <ScrollView /> */}
     </Wrapper>
   );
