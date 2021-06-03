@@ -1,12 +1,21 @@
 import React from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
+
+import {
+  QuotaContainer,
+  Wrapper,
+  CurrentQuotaText,
+  QuotaText,
+} from '../styles/screens/Home';
 
 export default function Home() {
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Home screen</Text>
-      </View>
-    </SafeAreaView>
+    <Wrapper>
+      <StatusBar backgroundColor="#f50d41" barStyle="light-content" />
+      <QuotaContainer>
+        <CurrentQuotaText>💲 54423.355</CurrentQuotaText>
+        <QuotaText>Last quotation </QuotaText>
+      </QuotaContainer>
+    </Wrapper>
   );
 }
