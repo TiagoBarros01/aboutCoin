@@ -1,10 +1,11 @@
 /* eslint-disable global-require */
-import React from 'react';
+import React, { useContext } from 'react';
 import {
-  StatusBar, Text, View,
+  StatusBar,
 } from 'react-native';
 
 import { QueryButton } from '../components/QueryButton';
+import { QuotationContext } from '../contexts/QuotationContext';
 import {
   QuotaContainer,
   Wrapper,
@@ -22,6 +23,8 @@ import {
 } from '../styles/screens/Home';
 
 export default function Home() {
+  const { getQuotationData } = useContext(QuotationContext);
+
   return (
     <Wrapper>
       <StatusBar backgroundColor="#f50d41" barStyle="light-content" />
@@ -31,11 +34,11 @@ export default function Home() {
       </QuotaContainer>
       <HistoricGraphic>
         <FilterContainer>
-          <QueryButton text="7D" />
-          <QueryButton text="15D" />
-          <QueryButton text="1M" />
-          <QueryButton text="3M" />
-          <QueryButton text="6M" />
+          <QueryButton onPress={() => getQuotationData(7)} text="7D" />
+          <QueryButton onPress={() => getQuotationData(15)} text="15D" />
+          <QueryButton onPress={() => getQuotationData(30)} text="1M" />
+          <QueryButton onPress={() => getQuotationData(90)} text="3M" />
+          <QueryButton onPress={() => getQuotationData(180)} text="6M" />
         </FilterContainer>
       </HistoricGraphic>
       <QuotationWrapper>

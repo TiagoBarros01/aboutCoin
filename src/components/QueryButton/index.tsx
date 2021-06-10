@@ -5,15 +5,15 @@ import { QueryText, BtnContainer } from './styles';
 
 interface Props {
   text: string;
+  onPress: () => void;
 }
 
-export function QueryButton ({ text }: Props) {
+export function QueryButton ({ text, onPress }: Props) {
   return (
     <View>
-      <BtnContainer activeOpacity={0.6}>
+      <BtnContainer onPress={onPress} activeOpacity={0.6}>
         <QueryText>{text}</QueryText>
       </BtnContainer>
     </View>
-
   );
 }
