@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { QuotationContextProvider } from './QuotationContext';
 import { ThemeContextProvider } from './ThemeContext';
 
 interface Props {
@@ -9,7 +10,9 @@ interface Props {
 export default function ContextProvider({ children }: Props) {
   return (
     <ThemeContextProvider>
-      {children}
+      <QuotationContextProvider>
+        {children}
+      </QuotationContextProvider>
     </ThemeContextProvider>
   );
 }
