@@ -1,3 +1,4 @@
+import { AxiosResponse } from 'axios';
 import React, { createContext, useMemo } from 'react';
 
 import api from '../services/api';
@@ -13,22 +14,18 @@ interface Props {
 const QuotationContext = createContext({} as QuotationContextData);
 
 function QuotationContextProvider({ children }: Props) {
-  const addZero = (number: number) => Number(number <= 9 ? `0${1}` : number);
+  const addZero = (number: number) => (number <= 9 ? `0${number}` : number);
 
   async function getQuotationData(daysQuantity: number) {
     const date = new Date();
 
-    const endDate = `${date.getFullYear()}
-    -${addZero(date.getMonth() + 1)}
-    -${addZero(date.getDate())}`;
+    const endDate = `${date.getFullYear()}-${addZero(date.getMonth() + 1)}-${addZero(date.getDate())}`;
 
     date.setDate(date.getDate() - daysQuantity);
 
-    const startDate = `${date.getFullYear()}
-    -${addZero(date.getMonth() + 1)}
-    -${addZero(date.getDate())}`;
+    const startDate = `${date.getFullYear()}-${addZero(date.getMonth() + 1)}-${addZero(date.getDate())}`;
 
-    const { data } = await api.get(`start=${startDate}&end=${endDate}`);
+    const { data } = await api.get(`/close.json?start=${startDate}&end=${endDate}`);
     const quotationList = Object.keys(data.bpi).map((key) => ({
       data: key.split('-').reverse().join('/'),
       value: data.bpi[key],
