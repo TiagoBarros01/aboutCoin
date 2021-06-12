@@ -1,16 +1,14 @@
 /* eslint-disable global-require */
 import React, { useContext, useEffect } from 'react';
-import { FlatList, ScrollView, StatusBar } from 'react-native';
+import { FlatList, StatusBar } from 'react-native';
 
-import { QueryButton } from '../components/QueryButton';
+import { HistoricGraphic } from '../components/HistoricGraphic';
 import { QuotationContext } from '../contexts/QuotationContext';
 import {
   QuotaContainer,
   Wrapper,
   CurrentQuotaText,
   QuotaText,
-  HistoricGraphic,
-  FilterContainer,
   QuotationWrapper,
   CardLeft,
   CardRight,
@@ -34,15 +32,7 @@ export default function Home() {
         <CurrentQuotaText>$ 54423.355</CurrentQuotaText>
         <QuotaText>Last quotation </QuotaText>
       </QuotaContainer>
-      <HistoricGraphic>
-        <FilterContainer>
-          <QueryButton onPress={() => getQuotationData(7)} text="7D" />
-          <QueryButton onPress={() => getQuotationData(15)} text="15D" />
-          <QueryButton onPress={() => getQuotationData(30)} text="1M" />
-          <QueryButton onPress={() => getQuotationData(90)} text="3M" />
-          <QueryButton onPress={() => getQuotationData(180)} text="6M" />
-        </FilterContainer>
-      </HistoricGraphic>
+      <HistoricGraphic />
       <FlatList
         showsVerticalScrollIndicator={false}
         data={quotationList}

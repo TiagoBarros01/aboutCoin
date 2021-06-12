@@ -28,31 +28,6 @@ export const QuotaText = styled.Text`
   color: ${(props) => props.theme.colors.red};
 `;
 
-export const HistoricGraphic = styled.View`
-  width: 90%;
-  height: 220px;
-
-  align-items: center;
-  justify-content: flex-end;
-
-  background: ${(props) => props.theme.colors.scndBackground};
-
-  border-radius: 15px;
-
-  margin-top: 20px;
-`;
-
-export const FilterContainer = styled.View`
-  width: 95%;
-
-  flex-direction: row;
-  justify-content: space-around;
-
-  margin-bottom: 15px;
-
-  padding-top: 10px;
-`;
-
 export const QuotationWrapper = styled.View`
   background: ${(props) => props.theme.colors.background};
   
