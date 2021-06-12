@@ -5,6 +5,7 @@ import api from '../services/api';
 interface QuotationContextData {
   getQuotationData: (daysQuantity: number) => void;
   quotationList: any;
+  dataGraphic: Array<number>;
 }
 
 interface Props {
@@ -15,6 +16,7 @@ const QuotationContext = createContext({} as QuotationContextData);
 
 function QuotationContextProvider({ children }: Props) {
   const [quotationList, setQuotationList] = useState<object[]>([{}]);
+  const [dataGraphic, setDataGraphic] = useState<Array<number>>([0, 0, 0]);
 
   const addZero = (number: number) => (number <= 9 ? `0${number}` : number);
 
@@ -34,16 +36,17 @@ function QuotationContextProvider({ children }: Props) {
       value: data.bpi[key],
     })).reverse());
 
-    console.log(quotationList);
+    setDataGraphic(Object.keys(data.bpi).map((key) => (data.bpi[key])));
   }
 
   const memoizeValue = useMemo(() => {
     const value: QuotationContextData = {
       getQuotationData,
       quotationList,
+      dataGraphic,
     };
     return value;
-  }, [getQuotationData, quotationList]);
+  }, [getQuotationData, quotationList, dataGraphic]);
 
   return (
     <QuotationContext.Provider value={memoizeValue}>
