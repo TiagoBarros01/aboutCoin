@@ -1,8 +1,6 @@
 /* eslint-disable global-require */
-import React, { useContext } from 'react';
-import {
-  StatusBar,
-} from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { FlatList, ScrollView, StatusBar } from 'react-native';
 
 import { QueryButton } from '../components/QueryButton';
 import { QuotationContext } from '../contexts/QuotationContext';
@@ -23,7 +21,11 @@ import {
 } from '../styles/screens/Home';
 
 export default function Home() {
-  const { getQuotationData } = useContext(QuotationContext);
+  const { getQuotationData, quotationList } = useContext(QuotationContext);
+
+  useEffect(() => {
+    getQuotationData(7);
+  }, []);
 
   return (
     <Wrapper>
@@ -41,20 +43,28 @@ export default function Home() {
           <QueryButton onPress={() => getQuotationData(180)} text="6M" />
         </FilterContainer>
       </HistoricGraphic>
-      <QuotationWrapper>
-        <CardLeft>
-          <CardLeftContent>
-            <BitCoinImage
-              source={require('../img/coinLogo.jpg')}
-            />
-            <CurrentDayQuotation>07/05/2021</CurrentDayQuotation>
-          </CardLeftContent>
-        </CardLeft>
-        <CardRight>
-          <PriceText>$ 53331.355</PriceText>
-        </CardRight>
-      </QuotationWrapper>
-      {/* <ScrollView /> */}
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={quotationList}
+        keyExtractor={quotationList.key}
+        renderItem={({ item }) => (
+          <QuotationWrapper>
+            <CardLeft>
+              <CardLeftContent>
+                <BitCoinImage source={require('../img/coinLogo.jpg')} />
+                <CurrentDayQuotation>{item.date}</CurrentDayQuotation>
+              </CardLeftContent>
+            </CardLeft>
+            <CardRight>
+              <PriceText>
+                $
+                {' '}
+                {item.value}
+              </PriceText>
+            </CardRight>
+          </QuotationWrapper>
+        )}
+      />
     </Wrapper>
   );
 }
